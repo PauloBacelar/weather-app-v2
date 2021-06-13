@@ -23,8 +23,13 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <SearchBar />
-        <h1>Hello, World!</h1>
+        <div>
+          <SearchBar />
+        </div>
+
+        <div>
+          <h1>Hello, World!</h1>
+        </div>
       </div>
     );
   }
