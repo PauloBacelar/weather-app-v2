@@ -1,5 +1,6 @@
 import React from "react";
 import api from "../api/api";
+import SearchBar from "./SearchBar";
 
 class App extends React.Component {
   constructor() {
@@ -20,7 +21,12 @@ class App extends React.Component {
   }
 
   render() {
-    return <h1>Hello, World!</h1>;
+    return (
+      <div>
+        <SearchBar />
+        <h1>Hello, World!</h1>
+      </div>
+    );
   }
 }
 
