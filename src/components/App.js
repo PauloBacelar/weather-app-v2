@@ -2,6 +2,11 @@ import React from "react";
 import api from "../api/api";
 
 class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {};
+  }
+
   componentDidMount() {
     api
       .get("/weather", {
