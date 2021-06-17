@@ -5,22 +5,28 @@ import SearchBar from "./SearchBar";
 class App extends React.Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      lat: null,
+      lon: null,
+    };
   }
 
   componentDidMount() {
-    api
-      .get("/weather", {
-        params: {
-          q: "London",
-        },
-      })
-      .then((response) => {
-        console.log(response.data);
-      });
+    navigator.geolocation.getCurrentPosition(
+      (data) => {
+        this.setState({
+          lat: data.coords.latitude,
+          lon: data.coords.longitude,
+        });
+      },
+      () => {
+        console.log("Error!");
+      }
+    );
   }
 
   render() {
+    console.log(this.state);
     return (
       <div>
         <div>
