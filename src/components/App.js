@@ -8,6 +8,7 @@ class App extends React.Component {
     this.state = {
       lat: null,
       lon: null,
+      userAllowed: false,
     };
   }
 
@@ -17,6 +18,7 @@ class App extends React.Component {
         this.setState({
           lat: data.coords.latitude,
           lon: data.coords.longitude,
+          userAllowed: true,
         });
       },
       () => {
@@ -26,18 +28,26 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state);
-    return (
-      <div>
+    if (this.state.userAllowed) {
+      return (
         <div>
-          <SearchBar />
-        </div>
+          <div>
+            <SearchBar />
+          </div>
 
-        <div>
-          <h1>Hello, World!</h1>
+          <div>
+            <i className="massive times icon"></i>
+            <h1>Hello, World!</h1>
+          </div>
         </div>
-      </div>
-    );
+      );
+    } else {
+      return (
+        <div>
+          <h1>Hello</h1>
+        </div>
+      );
+    }
   }
 }
 
