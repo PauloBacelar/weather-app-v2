@@ -1,6 +1,7 @@
 import React from "react";
 import api from "../api/api";
 import SearchBar from "./SearchBar";
+import Spinner from "./Spinner";
 
 class App extends React.Component {
   constructor() {
@@ -43,9 +44,7 @@ class App extends React.Component {
       );
     } else {
       return (
-        <div>
-          <h1>Hello</h1>
-        </div>
+        <Spinner message="Loading... please allow access to your location" />
       );
     }
   }
