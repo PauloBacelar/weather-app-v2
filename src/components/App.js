@@ -14,18 +14,13 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    navigator.geolocation.getCurrentPosition(
-      (data) => {
-        this.setState({
-          lat: data.coords.latitude,
-          lon: data.coords.longitude,
-          userAllowed: true,
-        });
-      },
-      () => {
-        console.log("Error!");
-      }
-    );
+    navigator.geolocation.getCurrentPosition((data) => {
+      this.setState({
+        lat: data.coords.latitude,
+        lon: data.coords.longitude,
+        userAllowed: true,
+      });
+    });
   }
 
   render() {
@@ -36,10 +31,7 @@ class App extends React.Component {
             <SearchBar />
           </div>
 
-          <div>
-            <i className="massive times icon"></i>
-            <h1>Hello, World!</h1>
-          </div>
+          <div></div>
         </div>
       );
     } else {

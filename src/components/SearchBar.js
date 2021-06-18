@@ -18,7 +18,7 @@ class SearchBar extends React.Component {
             <label>Enter a city</label>
             <input
               type="text"
-              placeholder="Search for weather"
+              placeholder="Search for a city. e.g. London,GB"
               onChange={this.onInputChange}
             />
           </div>
