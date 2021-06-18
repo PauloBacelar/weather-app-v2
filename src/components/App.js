@@ -10,6 +10,9 @@ class App extends React.Component {
       lat: null,
       lon: null,
       userAllowed: false,
+      country: "",
+      city: "",
+      weatherData: [],
     };
   }
 
@@ -30,14 +33,23 @@ class App extends React.Component {
         return response.data;
       })
       .then((data) => {
-        console.log(data);
+        this.setState({ city: data.name, country: data.sys.country });
+      });
+
+    api
+      .get(
+        "/onecall?lat=-14.792269899999999&lon=-39.0994041&appid=b201157d2845f79ad6e02f582e930d6f"
+      )
+      .then((response) => {
+        return response.data;
+      })
+      .then((data) => {
+        this.setState({ weatherData: data.daily });
       });
   }
 
   render() {
     if (this.state.userAllowed) {
-      console.log(this.state.lat);
-      console.log(this.state.lon);
       return (
         <div>
           <div>
