@@ -21,10 +21,23 @@ class App extends React.Component {
         userAllowed: true,
       });
     });
+
+    api
+      .get(
+        "/weather?lat=-14.7981&lon=-39.099993999999995&appid=b201157d2845f79ad6e02f582e930d6f"
+      )
+      .then((response) => {
+        return response.data;
+      })
+      .then((data) => {
+        console.log(data);
+      });
   }
 
   render() {
     if (this.state.userAllowed) {
+      console.log(this.state.lat);
+      console.log(this.state.lon);
       return (
         <div>
           <div>
