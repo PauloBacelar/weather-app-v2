@@ -56,7 +56,12 @@ class App extends React.Component {
             <SearchBar />
           </div>
 
-          <div></div>
+          <div>
+            <h1>
+              {this.state.city}, {this.state.country}{" "}
+              <i className={`${this.state.country.toLowerCase()} flag`}></i>
+            </h1>
+          </div>
         </div>
       );
     } else {
