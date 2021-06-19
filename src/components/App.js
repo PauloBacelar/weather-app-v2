@@ -58,10 +58,15 @@ class App extends React.Component {
           </div>
 
           <div>
-            <h1>
-              {this.state.city}, {this.state.country}{" "}
-              <i className={`${this.state.country.toLowerCase()} flag`}></i>
-            </h1>
+            <div className="place">
+              <h1>
+                {this.state.city}, {this.state.country}
+              </h1>
+              <img
+                src={`https://www.countryflags.io/${this.state.country.toLowerCase()}/flat/32.png`}
+                alt={`${this.state.country} flag`}
+              />
+            </div>
           </div>
         </div>
       );
