@@ -14,6 +14,7 @@ class App extends React.Component {
       country: "",
       city: "",
       weatherData: [],
+      currentWeather: [],
     };
 
     this.getWeather = this.getWeather.bind(this);
@@ -61,15 +62,19 @@ class App extends React.Component {
         return response.data;
       })
       .then((data) => {
-        this.setState({ weatherData: data.daily });
+        console.log(data);
+        this.setState({
+          weatherData: data.hourly,
+          currentWeather: data.current,
+        });
       });
   };
 
   render() {
-    if (this.state.lon && this.state.lat) {
+    if (this.state.weatherData.length) {
       return (
         <div className="weather-card-container">
-          <Weather weatherData={this.state} />
+          <Weather weather={this.state} />
         </div>
       );
     } else {

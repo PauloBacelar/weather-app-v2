@@ -3,21 +3,19 @@ import React from "react";
 
 class Weather extends React.Component {
   render() {
+    console.log(this.props.weather.currentWeather);
     return (
       <div className="weather-card">
-        <div>
-          <div className="place">
-            <h1>
-              {this.props.weatherData.city}, {this.props.weatherData.country}
-            </h1>
-            {this.props.weatherData.country ? (
-              <img
-                src={`https://www.countryflags.io/${this.props.weatherData.country.toLowerCase()}/flat/32.png`}
-                alt={`${this.props.weatherData.country} flag`}
-                className="country-flag"
-              />
-            ) : null}
+        <div className="header">
+          <div className="icon">
+            <img
+              src={`http://openweathermap.org/img/wn/${this.props.weather.currentWeather.weather[0].icon}@2x.png`}
+              alt={this.props.weather.currentWeather.weather[0].description}
+              className="weather-icon"
+            />
           </div>
+
+          <div className="current-weather-data"></div>
         </div>
       </div>
     );
