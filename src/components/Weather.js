@@ -1,4 +1,5 @@
 import "../styles/Weather.css";
+import WeatherHeader from "./WeatherHeader";
 import React from "react";
 
 class Weather extends React.Component {
