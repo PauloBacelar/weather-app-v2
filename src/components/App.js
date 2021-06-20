@@ -45,7 +45,7 @@ class App extends React.Component {
   getWeather = () => {
     api
       .get(
-        `/weather?lat=${this.state.lat}&lon=${this.state.lon}&appid=b201157d2845f79ad6e02f582e930d6f`
+        `/weather?lat=${this.state.lat}&lon=${this.state.lon}&units=metric&appid=b201157d2845f79ad6e02f582e930d6f`
       )
       .then((response) => {
         return response.data;
@@ -56,13 +56,12 @@ class App extends React.Component {
 
     api
       .get(
-        `/onecall?lat=${this.state.lat}&lon=${this.state.lon}&appid=b201157d2845f79ad6e02f582e930d6f`
+        `/onecall?lat=${this.state.lat}&lon=${this.state.lon}&units=metric&appid=b201157d2845f79ad6e02f582e930d6f`
       )
       .then((response) => {
         return response.data;
       })
       .then((data) => {
-        console.log(data);
         this.setState({
           weatherData: data.hourly,
           currentWeather: data.current,
