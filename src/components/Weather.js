@@ -3,7 +3,7 @@ import React from "react";
 class Weather extends React.Component {
   render() {
     return (
-      <div>
+      <div className="weather-card">
         <div>
           <div className="place">
             <h1>
