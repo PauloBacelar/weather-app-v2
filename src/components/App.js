@@ -19,15 +19,25 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    navigator.geolocation.getCurrentPosition((data) => {
-      this.setState({
-        lat: data.coords.latitude,
-        lon: data.coords.longitude,
-        userAllowed: true,
-      });
+    navigator.geolocation.getCurrentPosition(
+      (data) => {
+        this.setState({
+          lat: data.coords.latitude,
+          lon: data.coords.longitude,
+          userAllowed: true,
+        });
 
-      this.getWeather();
-    });
+        this.getWeather();
+      },
+      () => {
+        this.setState({
+          lat: 51.509865,
+          lon: -0.118092,
+        });
+
+        this.getWeather();
+      }
+    );
   }
 
   getWeather = () => {
@@ -55,7 +65,8 @@ class App extends React.Component {
   };
 
   render() {
-    if (this.state.userAllowed) {
+    console.log(this.state);
+    if (this.state.lon && this.state.lat) {
       return (
         <div>
           <div>
@@ -74,9 +85,7 @@ class App extends React.Component {
         </div>
       );
     } else {
-      return (
-        <Spinner message="Loading... please allow access to your location" />
-      );
+      return <Spinner />;
     }
   }
 }
