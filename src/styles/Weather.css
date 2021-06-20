@@ -19,9 +19,18 @@
   margin-left: 10px;
 }
 
+.header-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
 .header {
   display: flex;
   align-items: center;
+  width: 80%;
+  height: 100px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .text {
