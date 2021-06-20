@@ -15,7 +15,12 @@ class Weather extends React.Component {
             />
           </div>
 
-          <div className="current-weather-data"></div>
+          <div className="current-weather-data">
+            <h1>
+              {this.props.weather.currentWeather.temp} -{" "}
+              {this.props.weather.currentWeather.weather[0].main}
+            </h1>
+          </div>
         </div>
       </div>
     );
