@@ -1,5 +1,5 @@
 .weather-card {
-  background-color: aqua;
+  background: linear-gradient(#accbfa, #96b7ed);
 }
 
 .place {
