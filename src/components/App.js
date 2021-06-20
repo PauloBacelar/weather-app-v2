@@ -2,6 +2,7 @@ import "../styles/App.css";
 import React from "react";
 import api from "../api/api";
 import Spinner from "./Spinner";
+import Weather from "./Weather";
 
 class App extends React.Component {
   constructor() {
@@ -66,23 +67,7 @@ class App extends React.Component {
 
   render() {
     if (this.state.lon && this.state.lat) {
-      return (
-        <div>
-          <div>
-            <div className="place">
-              <h1>
-                {this.state.city}, {this.state.country}
-              </h1>
-              {this.state.country ? (
-                <img
-                  src={`https://www.countryflags.io/${this.state.country.toLowerCase()}/flat/32.png`}
-                  alt={`${this.state.country} flag`}
-                />
-              ) : null}
-            </div>
-          </div>
-        </div>
-      );
+      return <Weather weatherData={this.state} />;
     } else {
       return <Spinner />;
     }
