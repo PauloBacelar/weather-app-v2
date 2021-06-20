@@ -1,3 +1,4 @@
+import "../styles/Weather.css";
 import React from "react";
 
 class Weather extends React.Component {
@@ -13,6 +14,7 @@ class Weather extends React.Component {
               <img
                 src={`https://www.countryflags.io/${this.props.weatherData.country.toLowerCase()}/flat/32.png`}
                 alt={`${this.props.weatherData.country} flag`}
+                className="country-flag"
               />
             ) : null}
           </div>

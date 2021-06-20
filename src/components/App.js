@@ -1,4 +1,3 @@
-import "../styles/App.css";
 import React from "react";
 import api from "../api/api";
 import Spinner from "./Spinner";

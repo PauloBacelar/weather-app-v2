@@ -1,0 +1,13 @@
+.weather-card {
+  background-color: aqua;
+}
+
+.place {
+  display: flex;
+  align-items: center;
+}
+
+.country-flag {
+  margin-top: -10px;
+  margin-left: 10px;
+}
