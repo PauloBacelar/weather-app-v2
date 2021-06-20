@@ -66,7 +66,11 @@ class App extends React.Component {
 
   render() {
     if (this.state.lon && this.state.lat) {
-      return <Weather weatherData={this.state} />;
+      return (
+        <div className="weather-card-container">
+          <Weather weatherData={this.state} />
+        </div>
+      );
     } else {
       return <Spinner />;
     }
