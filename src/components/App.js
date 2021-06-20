@@ -65,7 +65,6 @@ class App extends React.Component {
   };
 
   render() {
-    console.log(this.state);
     if (this.state.lon && this.state.lat) {
       return (
         <div>
