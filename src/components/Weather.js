@@ -4,7 +4,6 @@ import React from "react";
 
 class Weather extends React.Component {
   render() {
-    console.log(this.props.weather.currentWeather);
     return (
       <div className="weather-card">
         <div className="header">
@@ -22,7 +21,11 @@ class Weather extends React.Component {
               {this.props.weather.currentWeather.weather[0].main}
             </h1>
 
-            <div className="place"></div>
+            <div className="place">
+              <p>
+                {this.props.weather.city}, {this.props.weather.country}
+              </p>
+            </div>
           </div>
         </div>
       </div>

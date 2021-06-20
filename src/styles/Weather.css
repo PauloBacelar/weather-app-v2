@@ -25,10 +25,20 @@
 }
 
 .text {
-  
+  display: flex;
+  flex-direction: column;
+}
+
+.place {
+  margin-top: -10px;
 }
 
 h1 {
   font-size: 20px;
+  font-weight: 500;
   color: rgba(0, 0, 0, 0.75);
+}
+
+p {
+  color: rgba(0, 0, 0, 0.6);
 }
