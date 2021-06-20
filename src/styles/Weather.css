@@ -1,5 +1,7 @@
 .weather-card {
   background: linear-gradient(#accbfa, #96b7ed);
+  border-radius: 10px;
+  width: 300px;
 }
 
 .place {
