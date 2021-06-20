@@ -1,7 +1,6 @@
 import "../styles/App.css";
 import React from "react";
 import api from "../api/api";
-import SearchBar from "./SearchBar";
 import Spinner from "./Spinner";
 
 class App extends React.Component {
@@ -32,7 +31,6 @@ class App extends React.Component {
   }
 
   getWeather = () => {
-    console.log(this.state);
     api
       .get(
         `/weather?lat=${this.state.lat}&lon=${this.state.lon}&appid=b201157d2845f79ad6e02f582e930d6f`
@@ -57,14 +55,9 @@ class App extends React.Component {
   };
 
   render() {
-    console.log(this.state);
     if (this.state.userAllowed) {
       return (
         <div>
-          <div>
-            <SearchBar />
-          </div>
-
           <div>
             <div className="place">
               <h1>
