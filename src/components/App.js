@@ -15,6 +15,8 @@ class App extends React.Component {
       city: "",
       weatherData: [],
     };
+
+    this.getWeather = this.getWeather.bind(this);
   }
 
   componentDidMount() {
@@ -24,11 +26,16 @@ class App extends React.Component {
         lon: data.coords.longitude,
         userAllowed: true,
       });
-    });
 
+      this.getWeather();
+    });
+  }
+
+  getWeather = () => {
+    console.log(this.state);
     api
       .get(
-        "/weather?lat=-14.7981&lon=-39.099993999999995&appid=b201157d2845f79ad6e02f582e930d6f"
+        `/weather?lat=${this.state.lat}&lon=${this.state.lon}&appid=b201157d2845f79ad6e02f582e930d6f`
       )
       .then((response) => {
         return response.data;
@@ -39,7 +46,7 @@ class App extends React.Component {
 
     api
       .get(
-        "/onecall?lat=-14.792269899999999&lon=-39.0994041&appid=b201157d2845f79ad6e02f582e930d6f"
+        `/onecall?lat=${this.state.lat}&lon=${this.state.lon}&appid=b201157d2845f79ad6e02f582e930d6f`
       )
       .then((response) => {
         return response.data;
@@ -47,9 +54,10 @@ class App extends React.Component {
       .then((data) => {
         this.setState({ weatherData: data.daily });
       });
-  }
+  };
 
   render() {
+    console.log(this.state);
     if (this.state.userAllowed) {
       return (
         <div>
@@ -62,10 +70,12 @@ class App extends React.Component {
               <h1>
                 {this.state.city}, {this.state.country}
               </h1>
-              <img
-                src={`https://www.countryflags.io/${this.state.country.toLowerCase()}/flat/32.png`}
-                alt={`${this.state.country} flag`}
-              />
+              {this.state.country ? (
+                <img
+                  src={`https://www.countryflags.io/${this.state.country.toLowerCase()}/flat/32.png`}
+                  alt={`${this.state.country} flag`}
+                />
+              ) : null}
             </div>
           </div>
         </div>
