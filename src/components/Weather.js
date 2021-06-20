@@ -16,11 +16,13 @@ class Weather extends React.Component {
             />
           </div>
 
-          <div className="current-weather-data">
+          <div className="text">
             <h1>
-              {this.props.weather.currentWeather.temp}&#176;C -{" "}
+              {Math.round(this.props.weather.currentWeather.temp)}&#176;C -{" "}
               {this.props.weather.currentWeather.weather[0].main}
             </h1>
+
+            <div className="place"></div>
           </div>
         </div>
       </div>
