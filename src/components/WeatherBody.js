@@ -26,23 +26,22 @@ class WeatherBody extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     return (
       <div>
         <FutureWeatherCard
-          futureTime={this.props.time + 6}
+          futureTime={6}
           futureWeather={this.state.weather.in6h}
         />
         <FutureWeatherCard
-          futureTime={this.props.time + 12}
+          futureTime={12}
           futureWeather={this.state.weather.in12h}
         />
         <FutureWeatherCard
-          futureTime={this.props.time + 18}
+          futureTime={18}
           futureWeather={this.state.weather.in18h}
         />
         <FutureWeatherCard
-          futureTime={this.props.time + 24}
+          futureTime={24}
           futureWeather={this.state.weather.in24h}
         />
       </div>
