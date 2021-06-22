@@ -15,6 +15,7 @@ class App extends React.Component {
       city: "",
       weatherData: [],
       currentWeather: [],
+      hours: null,
     };
 
     this.getWeather = this.getWeather.bind(this);
@@ -27,6 +28,7 @@ class App extends React.Component {
           lat: data.coords.latitude,
           lon: data.coords.longitude,
           userAllowed: true,
+          hours: new Date().getHours(),
         });
 
         this.getWeather();
@@ -70,6 +72,7 @@ class App extends React.Component {
   };
 
   render() {
+    console.log(this.state);
     if (this.state.weatherData.length) {
       return (
         <div className="weather-card-container">
