@@ -5,7 +5,6 @@ import React from "react";
 
 class Weather extends React.Component {
   render() {
-    console.log(this.props);
     return (
       <div className="weather-card">
         <WeatherHeader data={this.props.weather} />
