@@ -2,7 +2,6 @@ import React from "react";
 
 class WeatherHeader extends React.Component {
   render() {
-    console.log(this.props);
     return (
       <div className="header-container">
         <div className="header">
