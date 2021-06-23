@@ -1,4 +1,5 @@
 import React from "react";
+import Spinner from "./Spinner";
 
 class FutureWeatherCard extends React.Component {
   render() {
@@ -16,7 +17,9 @@ class FutureWeatherCard extends React.Component {
       );
     }
 
-    return null;
+    return (
+      <Spinner message="Loading... Please allow access to your location" />
+    );
   }
 }
 

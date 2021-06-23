@@ -79,7 +79,9 @@ class App extends React.Component {
         </div>
       );
     } else {
-      return <Spinner />;
+      return (
+        <Spinner message="Loading... Please allow access to your location" />
+      );
     }
   }
 }
