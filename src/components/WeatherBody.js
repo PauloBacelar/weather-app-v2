@@ -27,7 +27,7 @@ class WeatherBody extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="card-body-container">
         <FutureWeatherCard
           futureTime={6}
           futureWeather={this.state.weather.in6h}

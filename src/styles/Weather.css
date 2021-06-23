@@ -55,5 +55,13 @@ p {
 
 .card-body-container {
   display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.single-card {
+  display: flex;
+  align-items: center;
   flex-direction: column;
 }
