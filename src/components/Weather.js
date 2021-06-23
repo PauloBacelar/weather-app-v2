@@ -8,10 +8,7 @@ class Weather extends React.Component {
     return (
       <div className="weather-card">
         <WeatherHeader data={this.props.weather} />
-        <WeatherBody
-          futureWeather={this.props.weather.weatherData}
-          time={this.props.weather.hours}
-        />
+        <WeatherBody futureWeather={this.props.weather.weatherData} />
       </div>
     );
   }

@@ -11,6 +11,7 @@ class FutureWeatherCard extends React.Component {
             src={`http://openweathermap.org/img/wn/${this.props.futureWeather.weather[0].icon}.png`}
             alt={this.props.futureWeather.weather[0].description}
           />
+          <p>{Math.round(this.props.futureWeather.temp)}&#176;</p>
         </div>
       );
     }

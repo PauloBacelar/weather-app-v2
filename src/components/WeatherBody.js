@@ -17,33 +17,35 @@ class WeatherBody extends React.Component {
   componentDidMount() {
     this.setState({
       weather: {
-        in6h: this.props.futureWeather[this.props.time + 6],
-        in12h: this.props.futureWeather[this.props.time + 12],
-        in18h: this.props.futureWeather[this.props.time + 18],
-        in24h: this.props.futureWeather[this.props.time + 24],
+        in6h: this.props.futureWeather[6],
+        in12h: this.props.futureWeather[12],
+        in18h: this.props.futureWeather[18],
+        in24h: this.props.futureWeather[24],
       },
     });
   }
 
   render() {
     return (
-      <div className="card-body-container">
-        <FutureWeatherCard
-          futureTime={6}
-          futureWeather={this.state.weather.in6h}
-        />
-        <FutureWeatherCard
-          futureTime={12}
-          futureWeather={this.state.weather.in12h}
-        />
-        <FutureWeatherCard
-          futureTime={18}
-          futureWeather={this.state.weather.in18h}
-        />
-        <FutureWeatherCard
-          futureTime={24}
-          futureWeather={this.state.weather.in24h}
-        />
+      <div className="card-body">
+        <div className="card-body-container">
+          <FutureWeatherCard
+            futureTime={6}
+            futureWeather={this.state.weather.in6h}
+          />
+          <FutureWeatherCard
+            futureTime={12}
+            futureWeather={this.state.weather.in12h}
+          />
+          <FutureWeatherCard
+            futureTime={18}
+            futureWeather={this.state.weather.in18h}
+          />
+          <FutureWeatherCard
+            futureTime={24}
+            futureWeather={this.state.weather.in24h}
+          />
+        </div>
       </div>
     );
   }
