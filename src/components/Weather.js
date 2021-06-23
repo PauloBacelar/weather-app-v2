@@ -10,7 +10,15 @@ class Weather extends React.Component {
       <div className="weather-card">
         <WeatherHeader data={this.props.weather} />
         <WeatherBody futureWeather={this.props.weather.weatherData} />
-        <SearchBar />
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <SearchBar />
+        </div>
       </div>
     );
   }
